@@ -13,7 +13,6 @@
   <meta property="og:image" content="https://<%= domain %>/images/og.jpg">
   <meta property="og:url" content="https://<%= domain %>">
   <link rel="icon" href="/images/logo-icon.png" type="image/png">
-  <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -40,12 +39,20 @@
 				<input class="file:hover:bg-zinc-600 file:bg-zinc-700 file:border-none file:rounded file:text-sm file:text-gray-300 file:px-2 text-gray-300 focus:outline-none w-full bg-zinc-900 px-2 py-1 border border-zinc-700 rounded-md" type="file" id="fileInput">
 				<button class="mt-9 bg-purple-700 px-4 py-2 rounded hover:bg-purple-600 text-white font-semibold" id="sendFileButton">Send File</button>
 			</div>
-			<div class="mt-12" id="fileList"></div>
+			<div class="mt-20" id="fileList"></div>
 			<footer class="mt-16 text-center text-gray-300">
 				©2024 <a class="text-blue-500 hover:text-blue-600" href="https://i-as.dev/" target="_blank">I-As.Dev</a> | <a class="text-blue-500 hover:text-blue-600" href="https://github.com/fitri-hy" target="_blank">Github</a>. All Rights Reserved.
 			</footer>
 		</section>
-	<main>
+	</main>
+
+    <div id="statusModal" class="fixed inset-0 flex items-center justify-center hidden z-50">
+        <div class="bg-zinc-800 border border-zinc-700 p-6 rounded-lg shadow-lg text-white text-center max-w-sm w-full">
+            <p id="modalMessage" class="text-lg font-semibold"></p>
+            <button id="closeModalBtn" class="mt-4 bg-rose-700 px-4 py-2 rounded text-white hover:bg-rose-600">Close</button>
+        </div>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/script.js"></script>
 </body>
