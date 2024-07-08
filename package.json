@@ -1,0 +1,22 @@
+{
+  "name": "rtfile-transfer-nodejs",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+	"start": "node app.js",
+	"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["file transfer", "real-time transfer", "share file", "file sharing"],
+  "author": "I-As.Dev",
+  "license": "MIT",
+  "description": "RTFile Transfer is a tool for transferring files between users in real-time.",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "nodemon": "^3.1.4",
+    "socket.io": "^4.7.5",
+    "uuid": "^10.0.0"
+  }
+}
