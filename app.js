@@ -7,9 +7,20 @@ const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
 
-app.use(cors());
+const io = socketIo(server, {
+    cors: {
+        origin: '*',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type'],
+    }
+});
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type']
+}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -56,7 +67,7 @@ app.get('/', (req, res) => {
     res.render('index', { domain: req.domain });
 });
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
